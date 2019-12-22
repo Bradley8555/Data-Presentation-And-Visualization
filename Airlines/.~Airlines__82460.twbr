@@ -1,0 +1,1252 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1010.1202                               -->
+<workbook source-build='2019.4.0 (20194.19.1010.1202)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' inline='true' name='federated.1p2938g0rxv71q10pg44i0x842e3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Airplane_Crashes_and_Fatalities_Since_1908' name='textscan.02zy2qp06zafk5161brlo0y1iayf'>
+            <connection class='textscan' directory='/Users/lukegruszka/Documents/GitHub/Data-Presentation-And-Visualization/Airlines' filename='Airplane_Crashes_and_Fatalities_Since_1908.csv' password='' port='0' server='' />
+          </named-connection>
+          <named-connection caption='airline-safety' name='textscan.0p7izl40180tif19edy2l0j9x3y5'>
+            <connection class='textscan' directory='/Users/lukegruszka/Documents/GitHub/Data-Presentation-And-Visualization/Airlines' filename='airline-safety.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='right' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Airplane_Crashes_and_Fatalities_Since_1908.csv].[Operator]' />
+              <expression op='[airline-safety.csv].[airline]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.02zy2qp06zafk5161brlo0y1iayf' name='Airplane_Crashes_and_Fatalities_Since_1908.csv' table='[Airplane_Crashes_and_Fatalities_Since_1908#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='Date' ordinal='0' />
+              <column datatype='datetime' name='Time' ordinal='1' />
+              <column datatype='string' name='Location' ordinal='2' />
+              <column datatype='string' name='Operator' ordinal='3' />
+              <column datatype='integer' name='Flight #' ordinal='4' />
+              <column datatype='string' name='Route' ordinal='5' />
+              <column datatype='string' name='Type' ordinal='6' />
+              <column datatype='string' name='Registration' ordinal='7' />
+              <column datatype='string' name='cn/In' ordinal='8' />
+              <column datatype='integer' name='Aboard' ordinal='9' />
+              <column datatype='integer' name='Fatalities' ordinal='10' />
+              <column datatype='integer' name='Ground' ordinal='11' />
+              <column datatype='string' name='Summary' ordinal='12' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0p7izl40180tif19edy2l0j9x3y5' name='airline-safety.csv' table='[airline-safety#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='airline' ordinal='0' />
+              <column datatype='integer' name='avail_seat_km_per_week' ordinal='1' />
+              <column datatype='integer' name='incidents_85_99' ordinal='2' />
+              <column datatype='integer' name='fatal_accidents_85_99' ordinal='3' />
+              <column datatype='integer' name='fatalities_85_99' ordinal='4' />
+              <column datatype='integer' name='incidents_00_14' ordinal='5' />
+              <column datatype='integer' name='fatal_accidents_00_14' ordinal='6' />
+              <column datatype='integer' name='fatalities_00_14' ordinal='7' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[Time]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Operator</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Operator]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Operator</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Flight #</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Flight #]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Flight #</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Route]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Route</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Registration</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Registration]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Registration</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cn/In</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cn/In]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>cn/In</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Aboard</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Aboard]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Aboard</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fatalities</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fatalities]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Fatalities</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ground</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ground]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Ground</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Summary</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Summary]</local-name>
+            <parent-name>[Airplane_Crashes_and_Fatalities_Since_1908.csv]</parent-name>
+            <remote-alias>Summary</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='record-delimiter'>&quot;\\r&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>airline</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[airline]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>airline</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avail_seat_km_per_week</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[avail_seat_km_per_week]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>avail_seat_km_per_week</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incidents_85_99</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incidents_85_99]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>incidents_85_99</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatal_accidents_85_99</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fatal_accidents_85_99]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>fatal_accidents_85_99</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatalities_85_99</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fatalities_85_99]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>fatalities_85_99</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incidents_00_14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incidents_00_14]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>incidents_00_14</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatal_accidents_00_14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fatal_accidents_00_14]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>fatal_accidents_00_14</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatalities_00_14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fatalities_00_14]</local-name>
+            <parent-name>[airline-safety.csv]</parent-name>
+            <remote-alias>fatalities_00_14</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' name='[Calculation1]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_AVG(SUM([Aboard]), -2, 0)'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Summary]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+      <column caption='Airline' datatype='string' name='[airline]' role='dimension' type='nominal' />
+      <column caption='Avail Seat Km Per Week' datatype='integer' name='[avail_seat_km_per_week]' role='dimension' type='quantitative' />
+      <column caption='Fatal Accidents 00 14' datatype='integer' name='[fatal_accidents_00_14]' role='measure' type='quantitative' />
+      <column caption='Fatal Accidents 85 99' datatype='integer' name='[fatal_accidents_85_99]' role='measure' type='quantitative' />
+      <column caption='Fatalities 00 14' datatype='integer' name='[fatalities_00_14]' role='measure' type='quantitative' />
+      <column caption='Fatalities 85 99' datatype='integer' name='[fatalities_85_99]' role='measure' type='quantitative' />
+      <column caption='Incidents 00 14' datatype='integer' name='[incidents_00_14]' role='measure' type='quantitative' />
+      <column caption='Incidents 85 99' datatype='integer' name='[incidents_85_99]' role='measure' type='quantitative' />
+      <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Operator)' hidden='true' name='[Action (Operator)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Operator]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Operator,Summary)' hidden='true' name='[Action (Operator,Summary)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Operator]' />
+          <groupfilter function='level-members' level='[Summary]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Operator,Type)' hidden='true' name='[Action (Operator,Type)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Operator]' />
+          <groupfilter function='level-members' level='[Type]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.514886' measure-ordering='alphabetic' measure-percentage='0.485114' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Operator:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Avianca&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Thai Airways&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Air France&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Gulf Air&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;El Al&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Alitalia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Southwest Airlines&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Aer Lingus&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Turkish Airlines&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Royal Air Maroc&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;All Nippon Airways&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Kenya Airways&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Korean Air&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Singapore Airlines&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TACA&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Ethiopian Airlines&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Austrian Airlines&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aerolineas Argentinas&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Vietnam Airlines&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Malaysia Airlines&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Finnair&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Air Canada&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <filter class='categorical' column='[Operator]' filter-group='2'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[Operator]' member='%null%' />
+          <groupfilter from='&quot;Aer Lingus&quot;' function='range' level='[Operator]' to='&quot;Vietnam Airlines&quot;' />
+        </groupfilter>
+      </filter>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Metrics by Year, Capacity, Size, Time' type='sheet' worksheet='Operator' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Metrics by Year, Capacity, Size, Time' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Metrics by Year, Capacity, Size, Time' type='sheet' worksheet='Type of Plane' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Metrics by Year, Capacity, Size, Time' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Metrics by Year, Capacity, Size, Time' type='sheet' worksheet='Airline Size' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Metrics by Year, Capacity, Size, Time' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Airline Size'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='integer' name='[Aboard]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Aboard]' derivation='Sum' name='[sum:Aboard:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Operator]' />
+              <groupfilter function='level-members' level='[Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]'>
+            <groupfilter function='level-members' level='[none:Operator:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Aboard:qk]</rows>
+        <cols>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</cols>
+      </table>
+      <simple-id uuid='{A0384EB7-D1C1-403D-BCFF-B2CD5128475A}' />
+    </worksheet>
+    <worksheet name='Fatalities By Year'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]'>
+            <groupfilter function='member' level='[Operator]' member='&quot;Air France&quot;' user:ui-action-filter='[Action3]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Operator]' />
+              <groupfilter function='level-members' level='[Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]'>
+            <groupfilter function='level-members' level='[none:Operator:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]</rows>
+        <cols>[federated.1p2938g0rxv71q10pg44i0x842e3].[yr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{51572656-60AA-4115-9B6E-DE1784F9D967}' />
+    </worksheet>
+    <worksheet name='Operator'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Summary]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Summary]' derivation='None' name='[none:Summary:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]'>
+            <groupfilter function='member' level='[Operator]' member='&quot;Air France&quot;' user:ui-action-filter='[Action3]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Operator]' />
+              <groupfilter function='level-members' level='[Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]'>
+            <groupfilter function='level-members' level='[none:Operator:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' />
+              <size column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' />
+              <text column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Summary:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D9B9B635-1884-491D-8AF8-C3EFF65EAAB5}' />
+    </worksheet>
+    <worksheet name='Plane Capacity'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='integer' name='[Aboard]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Aboard]' derivation='Sum' name='[sum:Aboard:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]'>
+            <groupfilter function='member' level='[Operator]' member='&quot;Air France&quot;' user:ui-action-filter='[Action3]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Operator]' />
+              <groupfilter function='level-members' level='[Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]'>
+            <groupfilter function='level-members' level='[none:Operator:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='10' />
+            <format attr='div-level' scope='cols' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <lod column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Aboard:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-cell' value-column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' z-order='2' />
+            <reference-line axis-column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Aboard:qk]' enable-instant-analytics='true' fill-above='true' fill-below='true' formula='average' id='refline1' label-type='none' percentage-bands='true' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' z-order='1'>
+              <reference-line-value percentage='60' />
+              <reference-line-value percentage='80' />
+            </reference-line>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Aboard:qk]</rows>
+        <cols>[federated.1p2938g0rxv71q10pg44i0x842e3].[yr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{170E9D77-6654-4D93-B6B2-5A265E435BB8}' />
+    </worksheet>
+    <worksheet name='Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='datetime' name='[Time]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Time]' derivation='Hour' name='[hr:Time:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]'>
+            <groupfilter function='member' level='[Operator]' member='&quot;Air France&quot;' user:ui-action-filter='[Action3]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Operator]' />
+              <groupfilter function='level-members' level='[Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]'>
+            <groupfilter function='level-members' level='[none:Operator:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator,Type)]</column>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]</rows>
+        <cols>[federated.1p2938g0rxv71q10pg44i0x842e3].[hr:Time:ok]</cols>
+      </table>
+      <simple-id uuid='{1538E6F8-422A-4440-80CE-8C1BAFFD927C}' />
+    </worksheet>
+    <worksheet name='Type of Plane'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Airplane_Crashes_and_Fatalities_Since_1908.csv+ (Multiple Connections)' name='federated.1p2938g0rxv71q10pg44i0x842e3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p2938g0rxv71q10pg44i0x842e3'>
+            <column datatype='integer' name='[Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Operator]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Operator]' derivation='None' name='[none:Operator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Type]' derivation='None' name='[none:Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fatalities]' derivation='Sum' name='[sum:Fatalities:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]'>
+            <groupfilter function='member' level='[Operator]' member='&quot;Air France&quot;' user:ui-action-filter='[Action3]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1p2938g0rxv71q10pg44i0x842e3].[Action (Operator)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' />
+              <color column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' />
+              <text column='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{71729BB8-3856-4FB6-A032-51C90EAC0C9A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 2'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='8' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='7' param='vert' type='layout-flow' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{1E240A95-849E-455F-B62C-5349E7EF3F01}' />
+    </dashboard>
+    <dashboard name='Metrics by Year, Capacity, Size, Time'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='19' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='14' param='horz' type='layout-flow' w='82400' x='800' y='1000'>
+              <zone h='98000' id='9' param='horz' type='layout-flow' w='82400' x='800' y='1000'>
+                <zone h='98000' id='7' type='layout-basic' w='82400' x='800' y='1000'>
+                  <zone h='24500' id='3' name='Fatalities By Year' w='41200' x='42000' y='1000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='24500' id='5' name='Plane Capacity' w='41200' x='42000' y='50000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='24500' id='6' name='Airline Size' w='41200' x='42000' y='74500'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='24500' id='11' name='Time' w='41200' x='42000' y='25500'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='59625' id='12' name='Operator' w='41200' x='800' y='1000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='38375' id='17' name='Type of Plane' w='41200' x='800' y='60625'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='18' is-fixed='true' param='vert' type='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='60750' id='20' name='Type of Plane' pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' type='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='24' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='23' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='59625' id='12' is-fixed='true' name='Operator' w='41200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='3' is-fixed='true' name='Fatalities By Year' w='41200' x='42000' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='11' is-fixed='true' name='Time' w='41200' x='42000' y='25500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='5' is-fixed='true' name='Plane Capacity' w='41200' x='42000' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='38375' id='17' is-fixed='true' name='Type of Plane' w='41200' x='800' y='60625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='60750' id='20' name='Type of Plane' pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' type='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='6' is-fixed='true' name='Airline Size' w='41200' x='42000' y='74500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{EF6760E3-5C66-41D5-AE43-130B726CA662}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <style />
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='1' param='vert' removable='false' type='layout-flow' w='98426' x='787' y='830'>
+            <zone h='3423' id='3' type='title' w='98426' x='787' y='830' />
+            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='98426' x='787' y='4253' />
+            <zone h='84440' id='5' paired-zone-id='4' removable='false' type='flipboard' w='98426' x='787' y='14730'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point captured-sheet='Metrics by Year, Capacity, Size, Time' id='1' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{243F26FF-8A0A-433C-A31F-77E543FB223B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Fatalities By Year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8809113D-4F61-4495-A441-8BE1D2E86E12}' />
+    </window>
+    <window class='worksheet' name='Plane Capacity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5CADB7A4-4CA7-4265-8725-E6AE982433ED}' />
+    </window>
+    <window class='worksheet' name='Airline Size'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{48059793-8595-4CF9-911C-012CAFB206AA}' />
+    </window>
+    <window class='worksheet' name='Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[sum:Fatalities:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8784EC29-ECC6-452C-AE89-B363B4261DD9}' />
+    </window>
+    <window class='worksheet' name='Operator'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EC520297-92BB-486C-BC0C-5F6D6AFDBF4B}' />
+    </window>
+    <window class='worksheet' name='Type of Plane'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p2938g0rxv71q10pg44i0x842e3].[none:Operator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BE93F488-6981-4875-8E91-474E732D9933}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Metrics by Year, Capacity, Size, Time'>
+      <viewpoints>
+        <viewpoint name='Airline Size'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Fatalities By Year'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Operator' />
+        <viewpoint name='Plane Capacity'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Type of Plane' />
+      </viewpoints>
+      <active id='6' />
+      <simple-id uuid='{26CA3498-FE83-4098-8639-D2849E7CD732}' />
+    </window>
+    <window class='dashboard' name='Story 1'>
+      <viewpoints />
+      <active id='4' />
+      <simple-id uuid='{EBA69565-B8F2-4AEC-973C-8FDCE0C3367E}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{5ACB4128-2729-408D-A25B-DA8283A34986}' />
+    </window>
+  </windows>
+</workbook>
