@@ -857,8 +857,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='6' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000' />
+            <zone h='100000' id='8' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='7' param='vert' type='layout-flow' w='98400' x='800' y='1000' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -954,8 +954,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='22' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='21' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='24' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='23' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
                 <zone fixed-size='280' h='59625' id='12' is-fixed='true' name='Operator' w='41200' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1305,7 +1305,7 @@
           </highlight>
         </viewpoint>
       </viewpoints>
-      <active id='6' />
+      <active id='-1' />
       <simple-id uuid='{26CA3498-FE83-4098-8639-D2849E7CD732}' />
     </window>
     <window class='dashboard' name='Story 1'>
